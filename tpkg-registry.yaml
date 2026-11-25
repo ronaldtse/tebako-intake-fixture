@@ -1,0 +1,23 @@
+---
+schema_version: 1
+# DOCTORED FIXTURE — the sha256 below is deliberately wrong (the real
+# pin for hello-ruby-1.0.0-linux-gnu-x86_64.tfs starts 7665…; see
+# README.md). The intake review must red this with Sha256Mismatch.
+payloads:
+- name: hello-ruby
+  kind: app
+  versions:
+  - version: '1.0.0'
+    platforms:
+      x86_64-linux-gnu:
+        artifact: hello-ruby-1.0.0-linux-gnu-x86_64.tfs
+        sha256: '866591a02c8dc7bd0b466a0afe8716f19810373141db2d2827a85fbd6952a795'
+    release:
+      ref: tfs:github:tebako-packages/hello-runtimes:1.0.0
+    signature:
+      keyid: efc3c250f7862a48
+      asc: hello-ruby-1.0.0-linux-gnu-x86_64.tfs.asc
+    runtime_requirement:
+      engine: ruby
+      constraint: '>= 3.3, < 5.0'
+  default: '1.0.0'
